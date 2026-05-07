@@ -34,7 +34,7 @@ It demonstrates how I design clean, maintainable, and production-ready REST APIs
 
 ## 🚀 Features
 
-- API versioning under /api/v1
+- API versioning under `/api/v1`
 - Form Request validation
 - API Resources for consistent JSON output
 - Thin controllers with a service layer
@@ -58,6 +58,7 @@ This keeps controllers thin and improves maintainability and testability.
 
 ## 📁 Project Structure
 
+```
 app/
 ├── Http/
 │   ├── Controllers/Api/V1
@@ -68,6 +69,7 @@ app/
 
 routes/
 └── api.php
+```
 
 ---
 
@@ -81,15 +83,17 @@ routes/
 
 ## 🛠️ Installation
 
+```bash
 composer install
 cp .env.example .env
 php artisan key:generate
 touch database/database.sqlite
 php artisan migrate:fresh --seed
 php artisan serve
+```
 
 API available at:  
-http://127.0.0.1:8000
+`http://127.0.0.1:8000`
 
 ---
 
@@ -97,50 +101,73 @@ http://127.0.0.1:8000
 
 SQLite is used for simplicity and zero-config local setup.
 
-.env:
+`.env`:
 
+```env
 DB_CONNECTION=sqlite
 DB_DATABASE=/absolute/path/to/project/database/database.sqlite
+```
 
 ---
 
 ## 🔌 API Endpoints
 
-Base: /api/v1
+Base: `/api/v1`
 
 ### Health
 
-GET /api/v1/health
+- `GET /api/v1/health`
 
 ### Products CRUD
 
-GET /api/v1/products  
-POST /api/v1/products  
-GET /api/v1/products/{id}  
-PUT /api/v1/products/{id}  
-PATCH /api/v1/products/{id}  
-DELETE /api/v1/products/{id}
+- `GET /api/v1/products`
+- `POST /api/v1/products`
+- `GET /api/v1/products/{id}`
+- `PUT /api/v1/products/{id}`
+- `PATCH /api/v1/products/{id}`
+- `DELETE /api/v1/products/{id}`
 
 ---
 
 ## 📦 cURL Examples
 
-Health:
+### Health
+
+```bash
 curl -X GET http://127.0.0.1:8000/api/v1/health
+```
 
-List:
+### List products
+
+```bash
 curl -X GET http://127.0.0.1:8000/api/v1/products
+```
 
-Create:
-curl -X POST http://127.0.0.1:8000/api/v1/products -H "Content-Type: application/json" -d '{"name":"Mechanical Keyboard","sku":"KEY-10001","description":"Hot-swappable keyboard","price":129.99,"stock":10,"is_active":true}'
+### Create product
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/v1/products \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Mechanical Keyboard",
+    "sku": "KEY-10001",
+    "description": "Hot-swappable keyboard",
+    "price": 129.99,
+    "stock": 10,
+    "is_active": true
+  }'
+```
 
 ---
 
 ## 🧪 Tests
 
+```bash
 php artisan test
+```
 
 Includes:
+
 - Health endpoint test  
 - Products CRUD tests  
 - Validation tests  
@@ -150,7 +177,7 @@ Includes:
 ## 🧠 Technical Decisions
 
 - SQLite for fast local setup  
-- /api/v1 versioning for future evolution  
+- `/api/v1` versioning for future evolution  
 - Service layer to separate business logic  
 - Testing for reliability  
 
@@ -168,10 +195,10 @@ Includes:
 
 ## 👤 Author
 
-David Fernando Sandoval Gómez  
+**David Fernando Sandoval Gómez**  
 Software Architect · Tech Lead · Full Stack Developer  
 
-Cali, Colombia  
-Available for remote work  
+📍 Cali, Colombia  
+🌎 Available for remote work  
 
-LinkedIn: https://www.linkedin.com/in/davidfernandosandovalgomez
+[LinkedIn](https://www.linkedin.com/in/davidfernandosandovalgomez)
