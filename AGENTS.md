@@ -1,38 +1,37 @@
 # AGENTS.md
 
-## Project
+## Purpose
 
-Laravel 13 API template for backend portfolio.
+This document defines guidelines for contributors and AI agents working on this repository.
 
-## Goal
+The goal of this project is to provide a clean, maintainable and production-ready Laravel REST API template.
 
-Build a clean, professional REST API template demonstrating senior backend practices.
+---
 
-## Rules
+## Development Principles
 
-- Keep the project simple and runnable locally with SQLite.
-- Do not introduce unnecessary packages unless justified.
-- Use Laravel conventions.
-- Use API versioning under `/api/v1`.
-- Use Form Requests for validation.
-- Use API Resources for JSON responses.
-- Use Services for business logic when useful.
-- Keep controllers thin.
-- Add tests for main endpoints.
-- Update README after changes.
+- Follow Laravel conventions whenever possible
+- Keep controllers thin
+- Move business logic to services
+- Use Form Requests for validation
+- Use API Resources for response formatting
+- Prefer clarity over cleverness
 
-## Commands
+---
 
-- Run tests: `php artisan test`
-- Run migrations: `php artisan migrate:fresh --seed`
-- Start server: `php artisan serve`
+## Architecture
 
-## Deliverables
+The project follows a layered architecture:
 
-- Health endpoint
-- Versioned API routes
-- Example CRUD module
-- FormRequest validation
-- API Resources
-- Basic tests
-- Professional README
+- Controllers → handle HTTP layer
+- Services → handle business logic
+- Requests → handle validation
+- Resources → handle response transformation
+
+---
+
+## Local Setup
+
+```bash
+php artisan migrate:fresh --seed
+php artisan serve
